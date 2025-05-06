@@ -32,9 +32,9 @@ DROP DATABASE dbname - Удалить базу данных
 `
 ALTER TABLE - Изменение типа столбца
 `
-<details>
-  <summary>Лабораторная 1</summary>
 # Лабораторная работа №1
+  <details>
+  <summary>Лабораторная 1</summary>
 1) Выберите из таблицы orders все заказы.
 
 ![Image](https://i.imgur.com/QFxDKpE.png)
@@ -185,66 +185,77 @@ CREATE table products (id INT UNSIGNED, category_id INT DEFAULT NULL, name VARCH
 <details>
 
 
-# Шпоры 
-[Uploading -шпоры[InternetShortcut]
-URL=https://github.com/SpiridonovaTaisia/bd1/commit/6f451c453ecfac0c0982b47681f6aa971dc78c93#diff-1f9a16d31c2ba6ba758498ec8f32b9e3780396ab1ac63e93b8a086e5e6087a53
-.md.url…]()
-<details>
-  <summary>шпоры</summary>
  
-
-
+ # Шпоры 
+<details>
+  <summary>Шпоры</summary>
 SELECT * FROM table1; - "SELECT *" Выбирает все строки из указанной таблицы.
 
 SELECT column1, column2 FROM table1; - "SELECT <перечисление имен>" Выбирает строки из указанной таблицы. В каждой строке оставляет только перечисленные столбцы.
 
-select column1, column2 from table1 WHERE column2 = 'Комикс'; - "WHERE" Оставляет в результате только те строки, которые подходят под условие.
+select column1, column2 from table1
+WHERE column2 = 'Комикс'; - "WHERE" Оставляет в результате только те строки, которые подходят под условие.
 
-select column1, column2 from table1 where column2 = 'Комикс' OR column2 = 'Книга'; - Условия можно комбинировать через "or" (выбрать строки, которые подходят под любое из условий).
+select column1, column2 from table1
+where column2 = 'Комикс' OR column2 = 'Книга'; - Условия можно комбинировать через "or" (выбрать строки, которые подходят под любое из условий).
 
-select column1, column2 from table1 where column1 = 'Изданное' AND column2 = 'Комикс'; - Или через and (выбрать строки, которые подходят одновременно под все условия). Оператор AND имеет приоритет перед оператором OR.
+select column1, column2 from table1
+where column1 = 'Изданное' AND column2 = 'Комикс'; - Или через and (выбрать строки, которые подходят одновременно под все условия).
+Оператор AND имеет приоритет перед оператором OR.
 
-select column1, column2 from table1 ORDER BY column2; - "ORDER BY" Сортирует результат по указанным столбцам, По умолчанию от меньшего к большему, но если добавить "DESC" — то наоборот.
+select column1, column2 from table1 
+ORDER BY column2; - "ORDER BY" Сортирует результат по указанным столбцам, По умолчанию от меньшего к большему, но если добавить "DESC" — то наоборот.
 
-select column1, column2 from table1 ORDER BY column2 LIMIT 5; - "LIMIT" Оставляет только первые N строк результата. Обычно используется в связке с "order by".
+select column1, column2 from table1
+ORDER BY column2 LIMIT 5; - "LIMIT" Оставляет только первые N строк результата. Обычно используется в связке с "order by".
 
-INSERT INTO table1 (column1, column2) VALUES (value1, value2); - добавление одной записи в таблицу. "INSERT INTO" добавляет новые записи в таблицу, значения вставляют с помощью "VALUE":
+INSERT INTO table1 (column1, column2) 
+VALUES (value1, value2); - добавление одной записи в таблицу. "INSERT INTO" добавляет новые записи в таблицу, значения вставляют с помощью "VALUE":
 
-NSERT INTO table1 (column1, column2) VALUES (value11, value12),(value21, value22); - добавление нескольких записей.
+NSERT INTO table1 (column1, column2)
+VALUES (value11, value12),(value21, value22); - добавление нескольких записей.
 
-NSERT INTO table1 (column1, column2) SELECT (col1, col2) from table2; - Добавление записей из другой таблицы.
+NSERT INTO table1 (column1, column2)
+SELECT (col1, col2) from table2; - Добавление записей из другой таблицы.
 
 INSERT INTO table1 SET field1=value1, field2=value2; - можно использовать не только "VALUES", но и "SET";
 
-"UPDATE" - обновление.
+"UPDATE" -  обновление.
 
 UPDATE table1 SET column1=new_value; - Обновление поля во всех записях.
 
-UPDATE table1 SET column1=new_value column2=new_value WHERE condition; - Обновление поля в записях, соответствующих условию.
+UPDATE table1 SET column1=new_value
+                  column2=new_value
+WHERE condition; - Обновление поля в записях, соответствующих условию.
 
 "DELETE" удаляет записи:
 
 DELETE FROM table1; - Удаление всех записей.
 
-DELETE FROM table1 WHERE CONDITION;- удаление записей, соответствующих условию.
+DELETE FROM table1
+WHERE CONDITION;- удаление записей, соответствующих условию.
 
 DROP table <table_name> - полностью удаляет указанную таблицу.
 
-delete from <table_name>; - удаляет все строки из таблицы, но не удаляет саму таблицу.
+delete from <table_name>; -  удаляет все строки из таблицы, но не удаляет саму таблицу.
+
 
 "TRUNCATE" выполняет очистку таблицы в массовом порядке, не позволяя указывать условия.
 
 TRUNCATE TABLE table1; - таблица пуста.
 
-NULL – это особое слово в MySQL и в отличии от "cancelled" или "new", его нужно писать без кавычек. Чтобы сравнить значение в поле с NULL, нужно использовать не символы равенства (=) и неравенства (<>), а специальное выражение IS NULL или IS NOT NULL.
+NULL – это особое слово в MySQL и в отличии от "cancelled" или "new", его нужно писать без кавычек. 
+Чтобы сравнить значение в поле с NULL, нужно использовать не символы равенства (=) и неравенства (<>), а специальное выражение IS NULL или IS NOT NULL.
 
 ТИПЫ ДАННЫХ:
 
 СИМВОЛЬНЫЕ:
 
-CHAR: представляет строку фиксированной длины. Длина хранимой строки указывается в скобках, например, CHAR(10) - строка из десяти символов.
+CHAR: представляет строку фиксированной длины.
+Длина хранимой строки указывается в скобках, например, CHAR(10) - строка из десяти символов. 
 
-VARCHAR: представляет строку переменной длины. Длина хранимой строки также указыватся в скобках, например, VARCHAR(10). VARCHAR (65535) - максимум.
+VARCHAR: представляет строку переменной длины.
+Длина хранимой строки также указыватся в скобках, например, VARCHAR(10). VARCHAR (65535) - максимум.
 
 Ряд дополнительных типов данных представляют текст неопределенной длины:
 
@@ -288,7 +299,8 @@ DOUBLE(REAL, DOUBLE PRECISION): хранит дробные числа с пла
 
 ДЛЯ РАБОТЫ С ДАТОЙ И ВРЕМЕНЕМ (timestamp):
 
-DATE: хранит даты с 1 января 1000 года до 31 деабря 9999 года (c "1000-01-01" до "9999-12-31"). По умолчанию для хранения используется формат yyyy-mm-dd. Некоторые из принимаемых форматов:
+DATE: хранит даты с 1 января 1000 года до 31 деабря 9999 года (c "1000-01-01" до "9999-12-31"). По умолчанию для хранения используется формат yyyy-mm-dd.
+Некоторые из принимаемых форматов:
 
 yyyy-mm-dd - 2018-05-25
 
@@ -312,7 +324,8 @@ hhmiss - 192134
 
 Примеры значений для типов DATETIME и TIMESTAMP:
 
-2018-05-25 19:21:34 2018-05-25 (хранимое значение 2018-05-25 00:00:00).
+2018-05-25 19:21:34
+2018-05-25 (хранимое значение 2018-05-25 00:00:00).
 
 DATETIME: объединяет время и дату, диапазон дат и времени - с 1 января 1000 года по 31 декабря 9999 года (с "1000-01-01 00:00:00" до "9999-12-31 23:59:59"). Для хранения по умолчанию используется формат "yyyy-mm-dd hh:mm:ss".
 
@@ -338,16 +351,21 @@ LONGBLOB: хранит бинарные данные в виде строки д
 
 стандартные целочисленные типы SQL INTEGER(или INT) и SMALLINT. В качестве расширения стандарта MySQL также поддерживает целочисленные типы TINYINT, MEDIUMINT, и BIGINT.
 
-![422910295-4f3536c9-ee85-47c6-8b96-63b18eb2fb9a](https://github.com/user-attachments/assets/739b785f-dc9e-4ee4-b116-b72f71de4dd4)
+![image](https://github.com/user-attachments/assets/4f3536c9-ee85-47c6-8b96-63b18eb2fb9a)
 
 OFFSET n - пропуск первых n строк.
 
 SELECT [DISTINCT] поля_таблиц FROM наименование_таблицы; - удаление дубликатов.
 
-ENUM и SET — это особые строковые типы, значения которых выбираются из фиксированного списка значений. Когда можно выбрать 1 вариант - используем ENUM. когда можно выбрать несколько вариантов - используем SET.
+ENUM и SET — это особые строковые типы, значения которых выбираются из фиксированного списка значений. Когда можно выбрать 1 вариант - используем ENUM. 
+когда можно выбрать несколько вариантов - используем SET.
 
 JOIN - оператор объединения таблиц SQL;
 
 INNER JOIN - позволяет объединять строки из двух или более таблиц на основе условия, заданного в операторе JOIN;
+<details>
 
-SELECT column1, SUM(column4) FROM table GROUP BY column1 HAVING aggregate_function(column4) operator value; - Оператор SQL HAVING аналогичен оператору SQL WHERE за тем исключением, что применяется не для всего набора столбцов таблицы, а для набора созданного оператором SQL GROUP BY и применяется всегда строго после него.
+SELECT column1, SUM(column4)
+FROM table
+GROUP BY column1
+HAVING aggregate_function(column4) operator value; - Оператор SQL HAVING аналогичен оператору SQL WHERE за тем исключением, что применяется не для всего набора столбцов таблицы, а для набора созданного оператором SQL GROUP BY и применяется всегда строго после него.

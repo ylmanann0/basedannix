@@ -65,6 +65,10 @@ ALTER TABLE - Изменение типа столбца
 5) Добавьте в таблицу products новый товар — «VR-очки», стоимостью 70000 рублей в количестве (count) 2 штук.
 ![Image](https://i.imgur.com/0zXjhuA.png)
 ![Image](https://i.imgur.com/QSVUM99.png)
+7) В таблицу products внесли данные с ошибкой, вместо "PS5" в наименовании написали IMAC. Исправьте ошибку.
+![Image](https://i.imgur.com/T3nqVaM.png)
+![Image](https://i.imgur.com/3HCxd6a.png)
+
 
 
 # Лабораторная работа №3
@@ -74,7 +78,3 @@ CREATE TABLE users (id INT, first_name VARCHAR (50), last_name VARCHAR (50)); IN
 ![418252857-5b7036e5-d0e6-4971-b655-904454b47ec0](https://github.com/user-attachments/assets/a72136e4-cfa0-46a0-8cc5-5def7d39ebfe)
 
 
-
-7) В таблицу products внесли данные с ошибкой, вместо "PS5" в наименовании написали IMAC. Исправьте ошибку.
-![Image](https://i.imgur.com/T3nqVaM.png)
-![Image](https://i.imgur.com/3HCxd6a.png)

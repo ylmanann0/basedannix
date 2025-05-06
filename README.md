@@ -66,6 +66,15 @@ ALTER TABLE - Изменение типа столбца
 ![Image](https://i.imgur.com/0zXjhuA.png)
 ![Image](https://i.imgur.com/QSVUM99.png)
 
+
+# Лабораторная работа №3
+Создайте таблицу users с полем id типа INT и двумя текстовыми полями, которые будут хранить имя (first_name) и фамилию (last_name). Длина имени и фамилии не превышает 50 символов. Добавьте в таблицу трех пользователей: Дмитрия Иванова, Анатолия Белого и Дениса Давыдова.
+
+CREATE TABLE users (id INT, first_name VARCHAR (50), last_name VARCHAR (50)); INSERT INTO users (id, first_name, last_name) VALUE (1, 'Дмитрий', 'Иванов'), (2, 'Анатолий', 'Белый'), (3, 'Денис', 'Давыдов'); image image
+![418252857-5b7036e5-d0e6-4971-b655-904454b47ec0](https://github.com/user-attachments/assets/a72136e4-cfa0-46a0-8cc5-5def7d39ebfe)
+
+
+
 7) В таблицу products внесли данные с ошибкой, вместо "PS5" в наименовании написали IMAC. Исправьте ошибку.
 ![Image](https://i.imgur.com/T3nqVaM.png)
 ![Image](https://i.imgur.com/3HCxd6a.png)
